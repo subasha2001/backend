@@ -1,7 +1,7 @@
 import { Router } from "express";
 import asyncHandler from "express-async-handler";
 import { jewelleryType } from "../dataType";
-import { GoldSilverModel, ProductsModel } from "../models/products.model";
+import { ProductsModel } from "../models/products.model";
 import { jewellers } from "../data";
 import multer from "multer";
 const router = Router();
@@ -135,7 +135,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 router.post("/upload", upload.single("image"), (req, res) => {
   res.json({
-    imageUrl: `http://localhost:3000/uploads/${req.file!.filename}`,
+    imageUrl: `https://backend-gpj.onrender.com/uploads/${req.file!.filename}`,
   });
 });
 //

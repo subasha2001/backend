@@ -11,6 +11,7 @@ import addImage from "./routes/addImage.router";
 import bodyParser from "body-parser";
 import orderRouter from "./routes/order.router";
 import goldSilver from "./routes/goldSilver.router";
+import path from "path";
 import reviewsRouter from "./routes/reviews.router";
 dbConnect();
 
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:4200"],
+    origin: ["https://imaginative-baklava-28f8d7.netlify.app"],
   })
 );
 
@@ -35,11 +36,19 @@ app.use("/api/reviews", reviewsRouter);
 app.use("/api", addImage);
 app.use("/uploads", express.static("uploads")); 
 
-const port = 3000;
+const port = 80;
+
+// if(process.env.NODE_ENV == 'production'){
+//   app.use(express.static(path.join(__dirname, '..', 'dist', 'frontend', 'browser')));
+//   app.get('/*', (req, res)=>{
+//     res.sendFile(
+//       path.join(__dirname, "..", "frontend", "dist", "frontend", "browser", "index.html")
+//     );
+//   })
+// }
 
 app.listen(port, () => {
   console.log("connected to " + port);
 });
 
-
-    // "build": "npm install && tsc"
+// "build": "npm install && tsc"
