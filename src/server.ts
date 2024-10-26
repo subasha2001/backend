@@ -22,7 +22,7 @@ app.use(
     credentials: true,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization",
-    origin: ["https://imaginative-baklava-28f8d7.netlify.app"],
+    origin: "https://imaginative-baklava-28f8d7.netlify.app",
     // origin: ["https://localhost:4200"],
   })
 );
