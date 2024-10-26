@@ -41,7 +41,7 @@ app.use("/api/reviews", reviewsRouter);
 app.use("/api", addImage);
 app.use("/uploads", express.static("uploads")); 
 
-const port = 80;
+const port = "https://backend-gpj.onrender.com";
 
 // if(process.env.NODE_ENV == 'production'){
 //   app.use(express.static(path.join(__dirname, '..', 'dist', 'frontend', 'browser')));
