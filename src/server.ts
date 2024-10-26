@@ -20,9 +20,14 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
     origin: ["https://imaginative-baklava-28f8d7.netlify.app"],
+    // origin: ["https://localhost:4200"],
   })
 );
+
+app.options("*", cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
