@@ -135,7 +135,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 router.post("/upload", upload.single("image"), (req, res) => {
   res.json({
-    imageUrl: `https://backend-gpj.onrender.com/uploads/${req.file!.filename}`,
+    imageUrl: `https://localhost:3000/uploads/${req.file!.filename}`,
   });
 });
 //
